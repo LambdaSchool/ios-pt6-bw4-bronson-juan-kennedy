@@ -11,6 +11,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Mortgage : NSObject
 
+@property (nonatomic) double homePrice;
+@property (nonatomic) double downPayment;
+@property (nonatomic) double interestRate;
+@property (nonatomic) int loanDuration;
+@property (nonatomic) double yearlyPropertyTax;
+
+- (instancetype)initWithHomePrice:(double)aHomePrice
+                              downPayment:(double)aDownPayment
+                             interestRate:(double)anInterestRate
+                             loanDuration:(int)aLoanDuration
+                        yearlyPropertyTax:(double)aYearlyPropertyTax;
+
 @end
 
 NS_ASSUME_NONNULL_END
