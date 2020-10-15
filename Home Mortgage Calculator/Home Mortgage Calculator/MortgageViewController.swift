@@ -8,14 +8,40 @@
 import UIKit
 
 class MortgageViewController: UIViewController {
-
+    @IBOutlet weak var estPaymentLabel: UILabel!
+    
+    @IBOutlet weak var detailsButton: UIButton!
+    
+    @IBOutlet weak var homePriceTextField: UITextField!
+    
+    @IBOutlet weak var durationTextField: UITextField!
+    
+    @IBOutlet weak var downPaymentSlider: UISlider!
+    
+    @IBOutlet weak var intRateSlider: UISlider!
+    
+    @IBOutlet weak var propertyTaxSlider: UISlider!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func detailButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func downPaymentSlide(_ sender: Any) {
+    }
+    
+    @IBAction func IntRateSlide(_ sender: Any) {
+    }
+    
+    @IBAction func propertyTaxSlide(_ sender: Any) {
+    }
+    
+    // continue
     /*
     // MARK: - Navigation
 
