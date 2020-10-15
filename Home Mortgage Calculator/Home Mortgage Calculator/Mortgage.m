@@ -9,4 +9,20 @@
 
 @implementation Mortgage
 
+- (instancetype)initWithHomePrice:(double)aHomePrice
+                      downPayment:(double)aDownPayment
+                     interestRate:(double)anInterestRate
+                     loanDuration:(int)aLoanDuration
+                yearlyPropertyTax:(double)aYearlyPropertyTax {
+    self = [super init];
+    if (self) {
+        _homePrice = aHomePrice;
+        _downPayment = aDownPayment;
+        _interestRate = anInterestRate;
+        _loanDuration = aLoanDuration;
+        _yearlyPropertyTax = aYearlyPropertyTax;
+    }
+    return self;
+}
+
 @end
