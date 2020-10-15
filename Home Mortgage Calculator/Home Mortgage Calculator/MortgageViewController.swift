@@ -41,7 +41,7 @@ class MortgageViewController: UIViewController {
     @IBAction func propertyTaxSlide(_ sender: Any) {
     }
     
-    // continue
+    // continue tmrw
     /*
     // MARK: - Navigation
 
