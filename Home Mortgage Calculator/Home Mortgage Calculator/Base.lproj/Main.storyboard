@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Mortgage View Controller-->
         <scene sceneID="pmQ-wY-qvl">
             <objects>
-                <viewController id="Wdn-BL-8dy" sceneMemberID="viewController">
+                <viewController id="Wdn-BL-8dy" customClass="MortgageViewController" customModule="Home_Mortgage_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9QF-TF-GjP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,6 +37,9 @@
                                         <rect key="frame" x="169" y="114" width="77" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="See Details"/>
+                                        <connections>
+                                            <action selector="detailButtonTapped:" destination="Wdn-BL-8dy" eventType="touchUpInside" id="uQG-K1-bl1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -85,6 +88,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Te-BP-IvG">
                                         <rect key="frame" x="-2" y="48.333333333333314" width="378" height="31"/>
+                                        <connections>
+                                            <action selector="downPaymentSlide:" destination="Wdn-BL-8dy" eventType="valueChanged" id="9oY-Mh-x2r"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interest Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fN-xH-3Cj">
                                         <rect key="frame" x="0.0" y="106.33333333333331" width="101.33333333333333" height="20.333333333333329"/>
@@ -94,6 +100,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="had-0h-YjX">
                                         <rect key="frame" x="-2" y="154.66666666666663" width="378" height="31"/>
+                                        <connections>
+                                            <action selector="IntRateSlide:" destination="Wdn-BL-8dy" eventType="valueChanged" id="IdJ-Yx-frT"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Property taxes/year:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G4-V3-hxA">
                                         <rect key="frame" x="0.0" y="212.66666666666663" width="153.33333333333334" height="20.333333333333343"/>
@@ -103,6 +112,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ltw-sz-G3E">
                                         <rect key="frame" x="-2" y="261" width="378" height="30"/>
+                                        <connections>
+                                            <action selector="propertyTaxSlide:" destination="Wdn-BL-8dy" eventType="valueChanged" id="3yw-su-Q31"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <constraints>
@@ -125,6 +137,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BOq-1U-huX"/>
+                    <connections>
+                        <outlet property="detailsButton" destination="XKz-oO-6gR" id="jQp-5e-8Fb"/>
+                        <outlet property="downPaymentSlider" destination="6Te-BP-IvG" id="jFC-o4-6aj"/>
+                        <outlet property="durationTextField" destination="3U9-Gw-MBC" id="Usp-v9-CUM"/>
+                        <outlet property="estPaymentLabel" destination="4xE-0f-meG" id="OUX-Us-7hd"/>
+                        <outlet property="homePriceTextField" destination="xQz-Ne-tbm" id="zm7-Pd-0Mb"/>
+                        <outlet property="intRateSlider" destination="had-0h-YjX" id="V9D-h4-APl"/>
+                        <outlet property="propertyTaxSlider" destination="Ltw-sz-G3E" id="Ozk-XK-EJW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9g-B2-hgz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
