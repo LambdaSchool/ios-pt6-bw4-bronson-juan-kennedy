@@ -26,7 +26,8 @@ class MortgageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        MortgageCalculatorController.calculatePayment(homePrice: 180000, downPayment: 50000, interestRate: 0.03, loanDuration: 20, yearlyPropertyTax: 3000)
+        
     }
     
     @IBAction func detailButtonTapped(_ sender: Any) {
