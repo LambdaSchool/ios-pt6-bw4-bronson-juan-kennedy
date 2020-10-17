@@ -17,6 +17,7 @@
 		923E2FC025369B81005D8DED /* Mortgage.m in Sources */ = {isa = PBXBuildFile; fileRef = 923E2FBF25369B81005D8DED /* Mortgage.m */; };
 		923E2FC525369C41005D8DED /* MortgageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923E2FC425369C41005D8DED /* MortgageViewController.swift */; };
 		923E2FCA25369E53005D8DED /* MortgageCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923E2FC925369E53005D8DED /* MortgageCalculatorController.swift */; };
+		928F2F0F253AA2ED00B27F5C /* MortgageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F2F0E253AA2ED00B27F5C /* MortgageDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		923E2FBF25369B81005D8DED /* Mortgage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mortgage.m; sourceTree = "<group>"; };
 		923E2FC425369C41005D8DED /* MortgageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageViewController.swift; sourceTree = "<group>"; };
 		923E2FC925369E53005D8DED /* MortgageCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageCalculatorController.swift; sourceTree = "<group>"; };
+		928F2F0E253AA2ED00B27F5C /* MortgageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				923E2FBD25369B81005D8DED /* Home Mortgage Calculator-Bridging-Header.h */,
 				923E2FC425369C41005D8DED /* MortgageViewController.swift */,
 				923E2FC925369E53005D8DED /* MortgageCalculatorController.swift */,
+				928F2F0E253AA2ED00B27F5C /* MortgageDetailViewController.swift */,
 			);
 			path = "Home Mortgage Calculator";
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				923E2FC525369C41005D8DED /* MortgageViewController.swift in Sources */,
+				928F2F0F253AA2ED00B27F5C /* MortgageDetailViewController.swift in Sources */,
 				923E2FC025369B81005D8DED /* Mortgage.m in Sources */,
 				923E2FCA25369E53005D8DED /* MortgageCalculatorController.swift in Sources */,
 				923E2F8825369391005D8DED /* AppDelegate.swift in Sources */,
