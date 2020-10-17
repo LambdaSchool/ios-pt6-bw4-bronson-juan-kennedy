@@ -6,9 +6,19 @@
 //
 
 import UIKit
+import EventKit
 
 class MortgageViewController: UIViewController {
-    @IBOutlet weak var estPaymentLabel: UILabel!
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var monthlyPaymentLabel: UILabel!
     
     @IBOutlet weak var detailsButton: UIButton!
     
@@ -18,39 +28,27 @@ class MortgageViewController: UIViewController {
     
     @IBOutlet weak var downPaymentSlider: UISlider!
     
-    @IBOutlet weak var intRateSlider: UISlider!
+    @IBOutlet weak var interestRateSlider: UISlider!
     
     @IBOutlet weak var propertyTaxSlider: UISlider!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        MortgageCalculatorController.calculatePayment(homePrice: 180000, downPayment: 50000, interestRate: 0.03, loanDuration: 20, yearlyPropertyTax: 3000)
-        
+    // MARK: - IBActions
+    
+    @IBAction func detailsButtonTapped(_ sender: Any) {
     }
     
-    @IBAction func detailButtonTapped(_ sender: Any) {
+    @IBAction func downPaymentSliderValueChanged(_ sender: Any) {
     }
     
-    @IBAction func downPaymentSlide(_ sender: Any) {
+    @IBAction func interestRateSliderValueChanged(_ sender: Any) {
     }
     
-    @IBAction func IntRateSlide(_ sender: Any) {
+    @IBAction func propertyTaxSliderValueChanged(_ sender: Any) {
     }
     
-    @IBAction func propertyTaxSlide(_ sender: Any) {
+    @IBAction func remindMeButtonTapped(_ sender: UIButton) {
+        // Do EventKit logic here
     }
     
-    // continue tmrw
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
