@@ -64,6 +64,9 @@
                                         <rect key="frame" x="0.0" y="48.333333333333343" width="374" height="34.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="homePriceTextFieldChanged:" destination="Wdn-BL-8dy" eventType="editingDidEnd" id="No4-2m-FLP"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration in years:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="off-Ci-na2">
                                         <rect key="frame" x="0.0" y="110.66666666666669" width="374" height="20.333333333333343"/>
@@ -81,48 +84,66 @@
                                     <constraint firstAttribute="height" constant="193" id="CHC-bl-mcf"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="cSr-Yw-bji">
-                                <rect key="frame" x="20" y="402" width="374" height="290"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cSr-Yw-bji">
+                                <rect key="frame" x="20" y="446" width="374" height="290"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Down Payment:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0k-01-DuL">
-                                        <rect key="frame" x="127.66666666666666" y="0.0" width="119" height="20.333333333333332"/>
+                                        <rect key="frame" x="37" y="0.0" width="300" height="48.333333333333336"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="96m-q9-ETz"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50000" minValue="0.0" maxValue="100000" translatesAutoresizingMaskIntoConstraints="NO" id="6Te-BP-IvG">
-                                        <rect key="frame" x="-2" y="48.333333333333314" width="378" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="300000" translatesAutoresizingMaskIntoConstraints="NO" id="6Te-BP-IvG">
+                                        <rect key="frame" x="-2" y="48.333333333333314" width="378" height="49.333333333333343"/>
+                                        <color key="minimumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="maximumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="downPaymentSliderValueChanged:" destination="Wdn-BL-8dy" eventType="valueChanged" id="9oY-Mh-x2r"/>
+                                            <action selector="downPaymentSliderValueChanged:" destination="Wdn-BL-8dy" eventType="valueChanged" id="7XX-LR-5ek"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interest Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fN-xH-3Cj">
-                                        <rect key="frame" x="136.33333333333334" y="106.33333333333331" width="101.33333333333334" height="20.333333333333329"/>
+                                        <rect key="frame" x="37" y="96.666666666666629" width="300" height="48.333333333333343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="EEU-Zr-cgW"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="had-0h-YjX">
-                                        <rect key="frame" x="-2" y="154.66666666666663" width="378" height="31"/>
+                                    <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="had-0h-YjX">
+                                        <rect key="frame" x="-2" y="145" width="378" height="49.333333333333343"/>
+                                        <color key="minimumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="maximumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="interestRateSliderValueChanged:" destination="Wdn-BL-8dy" eventType="valueChanged" id="IdJ-Yx-frT"/>
+                                            <action selector="downPaymentSliderValueChanged:" destination="Wdn-BL-8dy" eventType="valueChanged" id="93d-qz-Ahj"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Property taxes/year:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G4-V3-hxA">
-                                        <rect key="frame" x="110.33333333333333" y="212.66666666666663" width="153.33333333333337" height="20.333333333333343"/>
+                                        <rect key="frame" x="37" y="193.33333333333337" width="300" height="48.333333333333343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="cBH-6A-djH"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ltw-sz-G3E">
-                                        <rect key="frame" x="-2" y="261" width="378" height="30"/>
+                                    <slider opaque="NO" tag="2" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="5000" translatesAutoresizingMaskIntoConstraints="NO" id="Ltw-sz-G3E">
+                                        <rect key="frame" x="-2" y="241.66666666666666" width="378" height="49.333333333333343"/>
+                                        <color key="minimumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="maximumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="propertyTaxSliderValueChanged:" destination="Wdn-BL-8dy" eventType="valueChanged" id="3yw-su-Q31"/>
+                                            <action selector="downPaymentSliderValueChanged:" destination="Wdn-BL-8dy" eventType="valueChanged" id="uxy-Zo-W4m"/>
                                         </connections>
                                     </slider>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="290" id="DEd-oq-F8d"/>
+                                    <constraint firstItem="6Te-BP-IvG" firstAttribute="leading" secondItem="cSr-Yw-bji" secondAttribute="leadingMargin" id="PVR-U8-Akx"/>
+                                    <constraint firstItem="6Te-BP-IvG" firstAttribute="leading" secondItem="Ltw-sz-G3E" secondAttribute="leading" id="huF-gj-KGx"/>
+                                    <constraint firstItem="6Te-BP-IvG" firstAttribute="leading" secondItem="had-0h-YjX" secondAttribute="leading" id="mJG-dy-jFs"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7F-we-M6W">
@@ -152,12 +173,15 @@
                     <navigationItem key="navigationItem" id="BOq-1U-huX"/>
                     <connections>
                         <outlet property="detailsButton" destination="XKz-oO-6gR" id="jQp-5e-8Fb"/>
+                        <outlet property="downPaymentLabel" destination="K0k-01-DuL" id="kT8-is-QoC"/>
                         <outlet property="downPaymentSlider" destination="6Te-BP-IvG" id="jFC-o4-6aj"/>
                         <outlet property="durationTextField" destination="3U9-Gw-MBC" id="Usp-v9-CUM"/>
                         <outlet property="homePriceTextField" destination="xQz-Ne-tbm" id="zm7-Pd-0Mb"/>
+                        <outlet property="interestRateLabel" destination="3fN-xH-3Cj" id="T3d-W4-12G"/>
                         <outlet property="interestRateSlider" destination="had-0h-YjX" id="V9D-h4-APl"/>
                         <outlet property="monthlyPaymentLabel" destination="4xE-0f-meG" id="OUX-Us-7hd"/>
                         <outlet property="propertyTaxSlider" destination="Ltw-sz-G3E" id="Ozk-XK-EJW"/>
+                        <outlet property="propertyTaxesYearLabel" destination="1G4-V3-hxA" id="52M-EY-VZs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9g-B2-hgz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

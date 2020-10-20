@@ -32,18 +32,40 @@ class MortgageViewController: UIViewController {
     
     @IBOutlet weak var propertyTaxSlider: UISlider!
 
+    @IBOutlet weak var downPaymentLabel: UILabel!
+    
+    @IBOutlet weak var interestRateLabel: UILabel!
+    
+    @IBOutlet weak var propertyTaxesYearLabel: UILabel!
+    
     // MARK: - IBActions
     
     @IBAction func detailsButtonTapped(_ sender: Any) {
     }
     
-    @IBAction func downPaymentSliderValueChanged(_ sender: Any) {
+    @IBAction func downPaymentSliderValueChanged(_ sender: UISlider) {
+        let currentValue = Int(sender.value)
+        
+        switch sender.tag {
+        case 0: downPaymentLabel.text = "Down payment: \(currentValue)"
+            print("Inside Tag0 Slider")
+        
+        case 1: interestRateLabel.text = "Interest Rate: \(currentValue)%"
+        
+        case 2: propertyTaxesYearLabel.text = "Property tax/year: \(currentValue)"
+        
+        default:
+            break
+        }
+        calculateMonthlyPayment()
+        
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
-    @IBAction func interestRateSliderValueChanged(_ sender: Any) {
-    }
-    
-    @IBAction func propertyTaxSliderValueChanged(_ sender: Any) {
+    @IBAction func homePriceTextFieldChanged(_ sender: Any) {
+        self.view.endEditing(true)
     }
     
     @IBAction func remindMeButtonTapped(_ sender: UIButton) {
@@ -89,6 +111,11 @@ class MortgageViewController: UIViewController {
         
         self.present(preReminderAlert, animated: true, completion: nil)
     }
-    
 
+    
+    func calculateMonthlyPayment() {
+        let monthlyPayment = MortgageCalculatorController.calculatePayment(homePrice: Double(homePriceTextField.text!), downPayment: Double(downPaymentSlider.value), interestRate: Double(interestRateSlider.value), loanDuration: 30, yearlyPropertyTax: Double(propertyTaxSlider.value))
+        
+        monthlyPaymentLabel.text = String(format: "%.2f", monthlyPayment)
+    }
 }
