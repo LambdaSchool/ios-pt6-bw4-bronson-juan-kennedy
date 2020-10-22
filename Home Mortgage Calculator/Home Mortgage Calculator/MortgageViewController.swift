@@ -26,17 +26,17 @@ class MortgageViewController: UIViewController {
     
     @IBOutlet weak var durationTextField: UITextField!
     
-    @IBOutlet weak var downPaymentSlider: UISlider!
-    
     @IBOutlet weak var interestRateSlider: UISlider!
-    
-    @IBOutlet weak var propertyTaxSlider: UISlider!
 
     @IBOutlet weak var downPaymentLabel: UILabel!
     
     @IBOutlet weak var interestRateLabel: UILabel!
     
     @IBOutlet weak var propertyTaxesYearLabel: UILabel!
+
+    @IBOutlet weak var enteredDownPaymentTextField: UITextField!
+    
+    @IBOutlet weak var enteredPropertyTaxYearlyTextField: UITextField!
     
     // MARK: - IBActions
     
@@ -44,15 +44,11 @@ class MortgageViewController: UIViewController {
     }
     
     @IBAction func downPaymentSliderValueChanged(_ sender: UISlider) {
-        let currentValue = Int(sender.value)
+        let currentValue = Double(sender.value)
         
         switch sender.tag {
-        case 0: downPaymentLabel.text = "Down payment: \(currentValue)"
-            print("Inside Tag0 Slider")
-        
-        case 1: interestRateLabel.text = "Interest Rate: \(currentValue)%"
-        
-        case 2: propertyTaxesYearLabel.text = "Property tax/year: \(currentValue)"
+        case 0: let value = String(format: "%.2f", currentValue)
+            interestRateLabel.text = "Interest Rate: \(value)%"
         
         default:
             break
@@ -61,11 +57,18 @@ class MortgageViewController: UIViewController {
         
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         self.view.endEditing(true)
     }
     
     @IBAction func homePriceTextFieldChanged(_ sender: Any) {
+        calculateMonthlyPayment()
         self.view.endEditing(true)
+    }
+    
+    @IBAction func loanDurationFieldChanged(_ sender: Any) {
+        self.view.endEditing(true)
+        calculateMonthlyPayment()
     }
     
     @IBAction func remindMeButtonTapped(_ sender: UIButton) {
@@ -114,7 +117,7 @@ class MortgageViewController: UIViewController {
 
     
     func calculateMonthlyPayment() {
-        let monthlyPayment = MortgageCalculatorController.calculatePayment(homePrice: Double(homePriceTextField.text!), downPayment: Double(downPaymentSlider.value), interestRate: Double(interestRateSlider.value), loanDuration: 30, yearlyPropertyTax: Double(propertyTaxSlider.value))
+        let monthlyPayment = MortgageCalculatorController.calculatePayment(homePrice: Double(homePriceTextField.text!), downPayment: Double(enteredDownPaymentTextField.text!), interestRate: Double(interestRateSlider.value), loanDuration: Int(durationTextField.text!), yearlyPropertyTax: Double(enteredPropertyTaxYearlyTextField.text!))
         
         monthlyPaymentLabel.text = String(format: "%.2f", monthlyPayment)
     }
