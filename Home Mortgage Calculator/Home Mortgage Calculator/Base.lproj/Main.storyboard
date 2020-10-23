@@ -65,7 +65,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="homePriceTextFieldChanged:" destination="Wdn-BL-8dy" eventType="editingDidEnd" id="No4-2m-FLP"/>
+                                            <action selector="userInputTextFieldChanged:" destination="Wdn-BL-8dy" eventType="editingDidEnd" id="No4-2m-FLP"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration in years:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="off-Ci-na2">
@@ -79,7 +79,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="loanDurationFieldChanged:" destination="Wdn-BL-8dy" eventType="editingDidEnd" id="xh6-AY-fei"/>
+                                            <action selector="userInputTextFieldChanged:" destination="Wdn-BL-8dy" eventType="editingDidEnd" id="g78-dN-Ech"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -106,6 +106,9 @@
                                                 <rect key="frame" x="150" y="16.333333333333314" width="224" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="userInputTextFieldChanged:" destination="Wdn-BL-8dy" eventType="editingDidEnd" id="xuN-47-y6c"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -119,7 +122,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="had-0h-YjX">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="had-0h-YjX">
                                         <rect key="frame" x="-2" y="107" width="378" height="51"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="v66-GO-SPk"/>
@@ -127,7 +130,7 @@
                                         <color key="minimumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="maximumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="downPaymentSliderValueChanged:" destination="Wdn-BL-8dy" eventType="valueChanged" id="93d-qz-Ahj"/>
+                                            <action selector="interestRateSliderValueChanged:" destination="Wdn-BL-8dy" eventType="valueChanged" id="93d-qz-Ahj"/>
                                         </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Te9-9s-YHo">
@@ -146,6 +149,9 @@
                                                 <rect key="frame" x="160" y="21" width="214" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="userInputTextFieldChanged:" destination="Wdn-BL-8dy" eventType="editingDidEnd" id="pPe-8U-Gq6"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -154,7 +160,9 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="5eG-UN-oJJ"/>
                                     <constraint firstItem="lfb-Ml-GKY" firstAttribute="leading" secondItem="cSr-Yw-bji" secondAttribute="leading" id="6QI-7V-kNM"/>
                                     <constraint firstItem="Te9-9s-YHo" firstAttribute="leading" secondItem="cSr-Yw-bji" secondAttribute="leading" id="hDQ-vf-X49"/>
+                                    <constraint firstItem="had-0h-YjX" firstAttribute="leading" secondItem="cSr-Yw-bji" secondAttribute="leading" id="icA-7o-xcU"/>
                                     <constraint firstAttribute="trailing" secondItem="Te9-9s-YHo" secondAttribute="trailing" id="m0W-xg-bq5"/>
+                                    <constraint firstAttribute="trailing" secondItem="had-0h-YjX" secondAttribute="trailing" id="nts-me-Nng"/>
                                     <constraint firstAttribute="trailing" secondItem="lfb-Ml-GKY" secondAttribute="trailing" id="vQV-Sg-qgW"/>
                                 </constraints>
                             </stackView>

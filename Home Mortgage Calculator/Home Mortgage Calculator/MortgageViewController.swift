@@ -53,7 +53,7 @@ class MortgageViewController: UIViewController {
     @IBAction func detailsButtonTapped(_ sender: Any) {
     }
     
-    @IBAction func downPaymentSliderValueChanged(_ sender: UISlider) {
+    @IBAction func interestRateSliderValueChanged(_ sender: UISlider) {
         let currentValue = Double(sender.value)
         
         switch sender.tag {
@@ -71,14 +71,10 @@ class MortgageViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    @IBAction func homePriceTextFieldChanged(_ sender: Any) {
+    @IBAction func userInputTextFieldChanged(_ sender: Any) {
+        
         calculateMonthlyPayment()
         self.view.endEditing(true)
-    }
-    
-    @IBAction func loanDurationFieldChanged(_ sender: Any) {
-        self.view.endEditing(true)
-        calculateMonthlyPayment()
     }
     
     @IBAction func remindMeButtonTapped(_ sender: UIButton) {
