@@ -14,13 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) double homePrice;
 @property (nonatomic) double downPayment;
 @property (nonatomic) double interestRate;
-@property (nonatomic) int loanDuration;
+@property (nonatomic) double loanDuration;
 @property (nonatomic) double yearlyPropertyTax;
 
 - (instancetype)initWithHomePrice:(double)aHomePrice
                               downPayment:(double)aDownPayment
                              interestRate:(double)anInterestRate
-                             loanDuration:(int)aLoanDuration
+                             loanDuration:(double)aLoanDuration
                         yearlyPropertyTax:(double)aYearlyPropertyTax;
 
 @end
