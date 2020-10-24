@@ -8,6 +8,10 @@
 import UIKit
 import EventKit
 
+protocol AddMortgageDelegate {
+    func mortgageWasAdded(_ mortgage: Mortgage)
+}
+
 class MortgageViewController: UIViewController {
     
     // MARK: - Lifecycle
@@ -37,6 +41,12 @@ class MortgageViewController: UIViewController {
     @IBOutlet weak var enteredDownPaymentTextField: UITextField!
     
     @IBOutlet weak var enteredPropertyTaxYearlyTextField: UITextField!
+    
+    var delegate: AddMortgageDelegate?
+    
+    var myValue: Double = 0.0
+    
+    var mortgage: Mortgage?
     
     // MARK: - IBActions
     
@@ -117,8 +127,30 @@ class MortgageViewController: UIViewController {
 
     
     func calculateMonthlyPayment() {
-        let monthlyPayment = MortgageCalculatorController.calculatePayment(homePrice: Double(homePriceTextField.text!), downPayment: Double(enteredDownPaymentTextField.text!), interestRate: Double(interestRateSlider.value), loanDuration: Int(durationTextField.text!), yearlyPropertyTax: Double(enteredPropertyTaxYearlyTextField.text!))
+
+        let homePrice = Double(homePriceTextField.text ?? "0.0") ?? 0.0
+        let downPayment = Double(enteredDownPaymentTextField.text ?? "0.0") ?? 0.0
+        let interestRate = Double(interestRateSlider.value)
+        let loanDuration = Double(durationTextField.text ?? "0.0") ?? 0.0
+        let yearlyTax = Double(enteredPropertyTaxYearlyTextField.text ?? "0.0") ?? 0.0
         
+            
+        let mortgage = Mortgage(homePrice: homePrice, downPayment: downPayment, interestRate: interestRate, loanDuration: loanDuration, yearlyPropertyTax: yearlyTax)
+        
+        let monthlyPayment = MortgageCalculatorController.calculatePayment(forMortgage: mortgage)
+        
+        myValue = monthlyPayment
+        self.mortgage = mortgage
         monthlyPaymentLabel.text = String(format: "%.2f", monthlyPayment)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            if let detailMortgageVC = segue.destination as? MortgageDetailViewController {
+                detailMortgageVC.mortgageVC = self
+                detailMortgageVC.myValue = myValue
+                detailMortgageVC.mortgage = mortgage
+            }
+        }
     }
 }

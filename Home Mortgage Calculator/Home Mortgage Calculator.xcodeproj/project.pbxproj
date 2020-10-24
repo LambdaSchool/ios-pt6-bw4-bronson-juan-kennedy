@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920695D9254275610021E97A /* MortgageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920695D8254275610021E97A /* MortgageDetailViewController.swift */; };
+		920695DE25427F610021E97A /* MortgageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920695DD25427F610021E97A /* MortgageTableViewController.swift */; };
+		920695E3254280030021E97A /* MortgageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920695E2254280030021E97A /* MortgageTableViewCell.swift */; };
 		923E2F8825369391005D8DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923E2F8725369391005D8DED /* AppDelegate.swift */; };
 		923E2F8A25369391005D8DED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923E2F8925369391005D8DED /* SceneDelegate.swift */; };
 		923E2F8F25369391005D8DED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923E2F8D25369391005D8DED /* Main.storyboard */; };
@@ -17,7 +20,6 @@
 		923E2FC025369B81005D8DED /* Mortgage.m in Sources */ = {isa = PBXBuildFile; fileRef = 923E2FBF25369B81005D8DED /* Mortgage.m */; };
 		923E2FC525369C41005D8DED /* MortgageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923E2FC425369C41005D8DED /* MortgageViewController.swift */; };
 		923E2FCA25369E53005D8DED /* MortgageCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923E2FC925369E53005D8DED /* MortgageCalculatorController.swift */; };
-		928F2F0F253AA2ED00B27F5C /* MortgageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F2F0E253AA2ED00B27F5C /* MortgageDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		920695D8254275610021E97A /* MortgageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageDetailViewController.swift; sourceTree = "<group>"; };
+		920695DD25427F610021E97A /* MortgageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageTableViewController.swift; sourceTree = "<group>"; };
+		920695E2254280030021E97A /* MortgageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageTableViewCell.swift; sourceTree = "<group>"; };
 		923E2F8425369391005D8DED /* Home Mortgage Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Mortgage Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		923E2F8725369391005D8DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		923E2F8925369391005D8DED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +61,6 @@
 		923E2FBF25369B81005D8DED /* Mortgage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mortgage.m; sourceTree = "<group>"; };
 		923E2FC425369C41005D8DED /* MortgageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageViewController.swift; sourceTree = "<group>"; };
 		923E2FC925369E53005D8DED /* MortgageCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageCalculatorController.swift; sourceTree = "<group>"; };
-		928F2F0E253AA2ED00B27F5C /* MortgageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +122,9 @@
 				923E2FBD25369B81005D8DED /* Home Mortgage Calculator-Bridging-Header.h */,
 				923E2FC425369C41005D8DED /* MortgageViewController.swift */,
 				923E2FC925369E53005D8DED /* MortgageCalculatorController.swift */,
-				928F2F0E253AA2ED00B27F5C /* MortgageDetailViewController.swift */,
+				920695D8254275610021E97A /* MortgageDetailViewController.swift */,
+				920695DD25427F610021E97A /* MortgageTableViewController.swift */,
+				920695E2254280030021E97A /* MortgageTableViewCell.swift */,
 			);
 			path = "Home Mortgage Calculator";
 			sourceTree = "<group>";
@@ -273,11 +279,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				923E2FC525369C41005D8DED /* MortgageViewController.swift in Sources */,
-				928F2F0F253AA2ED00B27F5C /* MortgageDetailViewController.swift in Sources */,
+				920695D9254275610021E97A /* MortgageDetailViewController.swift in Sources */,
 				923E2FC025369B81005D8DED /* Mortgage.m in Sources */,
 				923E2FCA25369E53005D8DED /* MortgageCalculatorController.swift in Sources */,
 				923E2F8825369391005D8DED /* AppDelegate.swift in Sources */,
 				923E2F8A25369391005D8DED /* SceneDelegate.swift in Sources */,
+				920695DE25427F610021E97A /* MortgageTableViewController.swift in Sources */,
+				920695E3254280030021E97A /* MortgageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

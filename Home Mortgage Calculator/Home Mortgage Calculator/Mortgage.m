@@ -12,7 +12,7 @@
 - (instancetype)initWithHomePrice:(double)aHomePrice
                       downPayment:(double)aDownPayment
                      interestRate:(double)anInterestRate
-                     loanDuration:(int)aLoanDuration
+                     loanDuration:(double)aLoanDuration
                 yearlyPropertyTax:(double)aYearlyPropertyTax {
     self = [super init];
     if (self) {
