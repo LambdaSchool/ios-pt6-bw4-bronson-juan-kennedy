@@ -66,10 +66,6 @@ class MortgageViewController: UIViewController {
         calculateMonthlyPayment()
         
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        self.view.endEditing(true)
-    }
     
     @IBAction func userInputTextFieldChanged(_ sender: Any) {
         
@@ -119,6 +115,11 @@ class MortgageViewController: UIViewController {
         preReminderAlert.addAction(confirmReminderAction)
         
         self.present(preReminderAlert, animated: true, completion: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
     }
 
     
