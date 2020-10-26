@@ -65,7 +65,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="homePriceTextFieldChanged:" destination="Wdn-BL-8dy" eventType="editingDidEnd" id="No4-2m-FLP"/>
+                                            <action selector="valueEnteredTextFieldChanged:" destination="Wdn-BL-8dy" eventType="editingDidEnd" id="FUy-HV-GwF"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration in years:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="off-Ci-na2">
@@ -79,7 +79,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="loanDurationFieldChanged:" destination="Wdn-BL-8dy" eventType="editingDidEnd" id="xh6-AY-fei"/>
+                                            <action selector="valueEnteredTextFieldChanged:" destination="Wdn-BL-8dy" eventType="editingDidEnd" id="UGy-jf-aat"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -106,6 +106,9 @@
                                                 <rect key="frame" x="150" y="16.333333333333314" width="224" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="valueEnteredTextFieldChanged:" destination="Wdn-BL-8dy" eventType="editingDidEnd" id="9Hm-fQ-ks2"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -146,6 +149,9 @@
                                                 <rect key="frame" x="160" y="21" width="214" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="valueEnteredTextFieldChanged:" destination="Wdn-BL-8dy" eventType="editingDidEnd" id="cgy-kM-3G0"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -153,6 +159,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="5eG-UN-oJJ"/>
                                     <constraint firstItem="lfb-Ml-GKY" firstAttribute="leading" secondItem="cSr-Yw-bji" secondAttribute="leading" id="6QI-7V-kNM"/>
+                                    <constraint firstItem="had-0h-YjX" firstAttribute="leading" secondItem="cSr-Yw-bji" secondAttribute="leading" id="MEx-KP-ZS2"/>
+                                    <constraint firstAttribute="trailing" secondItem="had-0h-YjX" secondAttribute="trailing" id="OEm-yM-695"/>
                                     <constraint firstItem="Te9-9s-YHo" firstAttribute="leading" secondItem="cSr-Yw-bji" secondAttribute="leading" id="hDQ-vf-X49"/>
                                     <constraint firstAttribute="trailing" secondItem="Te9-9s-YHo" secondAttribute="trailing" id="m0W-xg-bq5"/>
                                     <constraint firstAttribute="trailing" secondItem="lfb-Ml-GKY" secondAttribute="trailing" id="vQV-Sg-qgW"/>
@@ -409,6 +417,9 @@
         <segue reference="b4A-Ls-TWq"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
