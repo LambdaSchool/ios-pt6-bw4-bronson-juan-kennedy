@@ -24,6 +24,7 @@ class MortgageDetailViewController: UIViewController {
     
     var mortgage: Mortgage?
     var myValue: Double?
+    var mortgageCalculatorController: MortgageCalculatorController?
     
     
     var mortgageVC: MortgageViewController?
@@ -38,6 +39,7 @@ class MortgageDetailViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        mortgageCalculatorController?.saveToPersistentStore()
     }
     
     private func updateViews(){

@@ -48,6 +48,8 @@ class MortgageViewController: UIViewController {
     
     var mortgage: Mortgage?
     
+    let mortgageCalculatorController = MortgageCalculatorController()
+    
     // MARK: - IBActions
     
     @IBAction func detailsButtonTapped(_ sender: Any) {
@@ -71,14 +73,9 @@ class MortgageViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    @IBAction func homePriceTextFieldChanged(_ sender: Any) {
+    @IBAction func valueEnteredTextFieldChanged(_ sender: Any) {
         calculateMonthlyPayment()
         self.view.endEditing(true)
-    }
-    
-    @IBAction func loanDurationFieldChanged(_ sender: Any) {
-        self.view.endEditing(true)
-        calculateMonthlyPayment()
     }
     
     @IBAction func remindMeButtonTapped(_ sender: UIButton) {
@@ -135,9 +132,9 @@ class MortgageViewController: UIViewController {
         let yearlyTax = Double(enteredPropertyTaxYearlyTextField.text ?? "0.0") ?? 0.0
         
             
-        let mortgage = Mortgage(homePrice: homePrice, downPayment: downPayment, interestRate: interestRate, loanDuration: loanDuration, yearlyPropertyTax: yearlyTax)
+        let mortgage = Mortgage(homePrice: homePrice, downPayment: downPayment, interestRate: interestRate, loanDuration: loanDuration, yearlyPropertyTax: yearlyTax, nickname: "")
         
-        let monthlyPayment = MortgageCalculatorController.calculatePayment(forMortgage: mortgage)
+        let monthlyPayment = mortgageCalculatorController.calculatePayment(forMortgage: mortgage)
         
         myValue = monthlyPayment
         self.mortgage = mortgage
