@@ -190,7 +190,13 @@
                             <constraint firstItem="cSr-Yw-bji" firstAttribute="top" secondItem="Q7j-KT-5SO" secondAttribute="bottom" constant="10" id="wPK-4E-z0q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Mortgage Calculator:" id="BOq-1U-huX"/>
+                    <navigationItem key="navigationItem" title="Mortgage Calculator:" id="BOq-1U-huX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="vcy-Df-t6C">
+                            <connections>
+                                <segue destination="bA5-ke-IHh" kind="show" id="s0W-16-sJe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailsButton" destination="XKz-oO-6gR" id="jQp-5e-8Fb"/>
                         <outlet property="downPaymentLabel" destination="K0k-01-DuL" id="kT8-is-QoC"/>
@@ -326,8 +332,7 @@
                     <navigationItem key="navigationItem" title="Breakdown Summary:" id="dhF-uv-0HF">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="BE6-IX-k3w">
                             <connections>
-                                <action selector="saveButtonTapped:" destination="QHW-Ix-hGH" id="nVW-sg-Teo"/>
-                                <segue destination="bA5-ke-IHh" kind="show" identifier="saveSegue" id="pIs-hU-sdn"/>
+                                <action selector="saveButtonTapped:" destination="QHW-Ix-hGH" id="Mde-zM-haw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -355,7 +360,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="OFv-Ix-wC6" detailTextLabel="SMf-o0-xmK" style="IBUITableViewCellStyleValue1" id="IHz-nt-hxX">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mortgageCell" textLabel="OFv-Ix-wC6" style="IBUITableViewCellStyleDefault" id="IHz-nt-hxX">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IHz-nt-hxX" id="bo1-Ev-uZI">
@@ -363,14 +368,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OFv-Ix-wC6">
-                                            <rect key="frame" x="20" y="11.999999999999998" width="33" height="20.333333333333332"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SMf-o0-xmK">
-                                            <rect key="frame" x="350.33333333333331" y="11.999999999999998" width="43.666666666666664" height="20.333333333333332"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>

@@ -145,7 +145,6 @@ class MortgageViewController: UIViewController {
         if segue.identifier == "detailSegue" {
             if let detailMortgageVC = segue.destination as? MortgageDetailViewController {
                 detailMortgageVC.mortgageVC = self
-                detailMortgageVC.myValue = myValue
                 detailMortgageVC.mortgage = mortgage
             }
         }
