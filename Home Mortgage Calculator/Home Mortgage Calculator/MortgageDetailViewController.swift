@@ -23,7 +23,6 @@ class MortgageDetailViewController: UIViewController {
     @IBOutlet weak var nicknameTextField: UITextField!
     
     var mortgage: Mortgage?
-    var myValue: Double?
     var mortgageCalculatorController: MortgageCalculatorController?
     
     
@@ -32,14 +31,16 @@ class MortgageDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        print(myValue)
-        print(mortgage)
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        mortgageCalculatorController?.saveToPersistentStore()
+        if let mortgage = mortgage {
+            print("This is the mortgage: \(mortgage)")
+            mortgageCalculatorController?.mortgages.append(mortgage)
+            mortgageCalculatorController?.saveToPersistentStore()
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     private func updateViews(){
@@ -57,7 +58,7 @@ class MortgageDetailViewController: UIViewController {
         
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -65,6 +66,6 @@ class MortgageDetailViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

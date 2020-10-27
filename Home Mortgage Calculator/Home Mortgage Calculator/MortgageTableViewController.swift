@@ -48,7 +48,7 @@ class MortgageTableViewController: UITableViewController {
         
         let mortgage = mortgageCalculatorController!.mortgages[indexPath.row]
         cell.textLabel?.text = mortgage.nickname
-        cell.detailTextLabel?.text = String(mortgage.homePrice)
+        //cell.detailTextLabel?.text = String(mortgage.homePrice)
 
         return cell
     }
