@@ -41,6 +41,7 @@ class MortgageDetailViewController: UIViewController {
             mortgageCalculatorController?.saveToPersistentStore()
             self.navigationController?.popToRootViewController(animated: true)
         }
+
     }
     
     private func updateViews(){
